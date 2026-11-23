@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>灵魂色彩 · 流行心理测试</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 动态背景光球 -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <main class="app-container">
+    <!-- 欢迎页 -->
+    <section id="screen-start" class="card screen active">
+      <div class="badge">✨ 2026 热门心理测试</div>
+      <div class="hero-visual">
+        <div class="color-ring">
+          <div class="color-core"></div>
+        </div>
+      </div>
+      <h1 class="title">测测你的「灵魂底色」</h1>
+      <p class="subtitle">
+        每个人的内心都藏着一种独特的色彩频率。<br />
+        通过 10 道直觉场景题，探索你潜意识里的性格底色、能量特质与灵魂契合度。
+      </p>
+      <div class="meta-info">
+        <span>📝 10 道直觉题</span>
+        <span>⏱️ 约 2 分钟</span>
+        <span>🎨 6 种灵魂原型</span>
+      </div>
+      <button id="btn-start" class="btn btn-primary btn-large">
+        开始探索我的灵魂色彩
+        <span class="arrow">→</span>
+      </button>
+    </section>
+
+    <!-- 答题页 -->
+    <section id="screen-quiz" class="card screen">
+      <div class="quiz-header">
+        <button id="btn-prev" class="btn-icon" title="上一题" aria-label="上一题">
+          ← 返回
+        </button>
+        <div class="progress-text">
+          <span id="current-q">1</span> / <span id="total-q">10</span>
+        </div>
+      </div>
+
+      <div class="progress-bar-wrap">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div id="question-box" class="question-box">
+        <div id="question-tag" class="question-tag">潜意识场景</div>
+        <h2 id="question-text" class="question-text">题目加载中...</h2>
+        <div id="options-list" class="options-list"></div>
+      </div>
+    </section>
+
+    <!-- 分析加载页 -->
+    <section id="screen-loading" class="card screen loading-screen">
+      <div class="spinner-ring"></div>
+      <h2 class="loading-title">正在解析你的潜意识色彩...</h2>
+      <p id="loading-tip" class="loading-tip">正在匹配情绪频率与性格维度</p>
+    </section>
+
+    <!-- 结果页 -->
+    <section id="screen-result" class="card screen result-screen">
+      <div class="result-poster" id="result-poster">
+        <div class="poster-top">
+          <span class="poster-label">SOUL COLOR REPORT</span>
+          <span class="poster-code" id="result-code">#FF7E67</span>
+        </div>
+
+        <div class="result-orb-wrap">
+          <div class="result-orb" id="result-orb"></div>
+        </div>
+
+        <p class="result-prefix">你的灵魂底色是</p>
+        <h1 class="result-name" id="result-name">日落珊瑚橙</h1>
+        <p class="result-en" id="result-en">SUNSET CORAL · 温暖的造梦者</p>
+
+        <div class="result-tags" id="result-tags"></div>
+      </div>
+
+      <div class="result-body">
+        <div class="result-section">
+          <h3>✨ 性格深度解读</h3>
+          <p id="result-desc"></p>
+        </div>
+
+        <div class="result-section">
+          <h3>📊 四维能量图谱</h3>
+          <div class="traits-grid" id="traits-grid"></div>
+        </div>
+
+        <div class="result-dual">
+          <div class="dual-box">
+            <h4>💫 社交与恋爱风格</h4>
+            <p id="result-love"></p>
+          </div>
+          <div class="dual-box">
+            <h4>🧲 灵魂契合色</h4>
+            <div class="match-chip" id="result-match"></div>
+          </div>
+        </div>
+
+        <div class="result-quote">
+          <span class="quote-mark">“</span>
+          <p id="result-quote"></p>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button id="btn-share" class="btn btn-primary">
+          📋 复制测试结果分享
+        </button>
+        <button id="btn-restart" class="btn btn-secondary">
+          🔄 重新测试
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">已复制到剪贴板！</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
